@@ -39,13 +39,14 @@ class TLClassifier(object):
         b = cv2.countNonZero(yellow)
         c = cv2.countNonZero(green)
         
-        if a > 40:
+        n = 1.*len(images)
+        if a/n > 40/3.:
             print('Red Light Detected!')
             return TrafficLight.RED
-        elif b > 20 :
+        elif b/n > 20/3. :
             print('Yellow Light Detected!')
             return TrafficLight.YELLOW
-        elif c > 20 :
+        elif c/n > 20/3. :
             print('Green Light Detected!')
             return TrafficLight.GREEN
         else:

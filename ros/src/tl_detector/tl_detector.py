@@ -118,7 +118,7 @@ class TLDetector(object):
         self.detectedlights = []
         prob = 0.3
         if int(self.sim_mode) == 1:
-            prob = 0.85
+            prob = 0.75
 
         for box in msg.bounding_boxes:
 #            ratio = (float)(box.ymax - box.ymin) / (float)(box.xmax - box.xmin) 
